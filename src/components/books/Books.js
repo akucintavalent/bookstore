@@ -4,27 +4,6 @@ import AddBook from '../add_book/AddBook';
 
 const Books = () => {
   const books = useSelector((state) => state.booksReducer);
-  console.log(books);
-  // [
-  //   {
-  //     title: 'The Hunger Games',
-  //     author: 'Suzanne Collins',
-  //     category: 'Action',
-  //     id: 1,
-  //   },
-  //   {
-  //     title: 'Dune',
-  //     author: 'Frank Herbert',
-  //     category: 'Science Fiction',
-  //     id: 2,
-  //   },
-  //   {
-  //     title: 'Capital in the Twenty First Century',
-  //     author: 'Thomas Piketty',
-  //     category: 'Economy',
-  //     id: 3,
-  //   },
-  // ];
   const categories = [
     {
       name: 'Action',
