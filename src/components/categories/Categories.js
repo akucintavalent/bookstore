@@ -1,3 +1,3 @@
-const Categories = () => <div>Yet to finish</div>;
+const Categories = () => <div>Under construction</div>;
 
 export default Categories;
