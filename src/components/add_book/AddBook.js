@@ -17,8 +17,8 @@ const AddBook = (props) => {
     const titleElement = authorElement.previousElementSibling;
     const newBook = {
       id: uuidv4(),
-      title: author,
-      author: title,
+      title,
+      author,
       category: categoriesElement.value,
     };
     authorElement.value = '';
