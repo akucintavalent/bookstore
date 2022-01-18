@@ -18,6 +18,8 @@ const AddBook = (props) => {
       author: authorElement.value,
       category: categoriesElement.value,
     };
+    authorElement.value = '';
+    titleElement.value = '';
     dispatch(addBook(newBook));
   };
   return (
