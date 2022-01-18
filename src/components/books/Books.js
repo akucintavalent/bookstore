@@ -1,4 +1,5 @@
 import Book from '../book/Book';
+import AddBook from '../add_book/AddBook';
 
 const Books = () => {
   const books = [
@@ -45,18 +46,7 @@ const Books = () => {
           category={book.category}
         />
       ))}
-      <div>
-        <h3>ADD NEW BOOK</h3>
-        <div>
-          <input type="text" />
-          <select name="categories" id="categories">
-            {categories.map((category) => (
-              <option key={category.id} value={category.name}>{category.name}</option>
-            ))}
-          </select>
-          <button type="button">ADD BOOK</button>
-        </div>
-      </div>
+      <AddBook categories={categories} />
     </>
   );
 };
