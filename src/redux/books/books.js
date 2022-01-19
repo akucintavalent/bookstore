@@ -24,11 +24,7 @@ export const getData = () => (dispatch) => {
         book.id = itemId;
         dispatch(addBook(book));
       });
-      console.log(books);
     });
-//   dispatch({ type: "PLUS" })
-//   dispatch({ type: "PLUS" })
-//   dispatch({ type: "PLUS" })
 };
 
 const reducer = (state = initialState, action) => {
