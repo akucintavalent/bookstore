@@ -24,17 +24,20 @@ export const getData = () => (dispatch) => {
         book.item_id = itemId;
         dispatch(addBook(book));
       });
-    });
+    })
+    .catch(() => {});
 };
 
 export const removeData = (id) => (dispatch) => {
   axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zzyTDYA0R80OtSGSmP3v/books/${id}`)
-    .then(() => dispatch(removeBook({ id })));
+    .then(() => dispatch(removeBook({ id })))
+    .catch(() => {});
 };
 
 export const addData = (book) => (dispatch) => {
   axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zzyTDYA0R80OtSGSmP3v/books/', book)
-    .then(() => dispatch(addBook(book)));
+    .then(() => dispatch(addBook(book)))
+    .catch(() => {});
 };
 
 const reducer = (state = initialState, action) => {
