@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../redux/books/books';
+import { removeData } from '../../redux/books/books';
 
 const Book = (props) => {
   const {
-    title, author, category, id,
+    title, category, id,
   } = props;
   const dispatch = useDispatch();
   const removeBookFromStore = () => {
-    dispatch(removeBook({ id }));
+    dispatch(removeData(id));
   };
   return (
     <div style={{
@@ -18,7 +18,6 @@ const Book = (props) => {
       <div>
         <ul>
           <li>{title}</li>
-          <li>{author}</li>
           <li>{category}</li>
         </ul>
         <div>
@@ -45,7 +44,6 @@ const Book = (props) => {
 Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
 };
 
