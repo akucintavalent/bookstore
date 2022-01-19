@@ -12,7 +12,7 @@ export const addBook = (payload) => ({
 
 export const removeBook = (payload) => ({
   type: REMOVE_BOOK,
-  id: payload.id,
+  item_id: payload.id,
 });
 
 export const getData = () => (dispatch) => {
@@ -21,10 +21,20 @@ export const getData = () => (dispatch) => {
       const books = response.data;
       Object.keys(books).forEach((itemId) => {
         const [book] = books[itemId];
-        book.id = itemId;
+        book.item_id = itemId;
         dispatch(addBook(book));
       });
     });
+};
+
+export const removeData = (id) => (dispatch) => {
+  axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zzyTDYA0R80OtSGSmP3v/books/${id}`)
+    .then(() => dispatch(removeBook({ id })));
+};
+
+export const addData = (book) => (dispatch) => {
+  axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zzyTDYA0R80OtSGSmP3v/books/', book)
+    .then(() => dispatch(addBook(book)));
 };
 
 const reducer = (state = initialState, action) => {
@@ -32,7 +42,7 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.item_id !== action.item_id);
     default:
       return state;
   }

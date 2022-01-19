@@ -3,7 +3,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/books/books';
+import { addData } from '../../redux/books/books';
 
 const AddBook = (props) => {
   const { categories } = props;
@@ -14,12 +14,12 @@ const AddBook = (props) => {
     const categoriesElement = event.target.previousElementSibling;
     const titleElement = categoriesElement.previousElementSibling;
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       category: categoriesElement.value,
     };
     titleElement.value = '';
-    dispatch(addBook(newBook));
+    dispatch(addData(newBook));
   };
   return (
     <div>

@@ -29,8 +29,8 @@ const Books = () => {
     <>
       {books.map((book) => (
         <Book
-          key={book.id}
-          id={book.id}
+          key={book.item_id}
+          id={book.item_id}
           title={book.title}
           category={book.category}
         />
