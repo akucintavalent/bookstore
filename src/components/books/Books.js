@@ -2,12 +2,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Book from '../book/Book';
 import AddBook from '../add_book/AddBook';
-import { getData } from '../../redux/books/books';
+import { getData, removeAllBooks } from '../../redux/books/books';
+import './Books.css';
 
 const Books = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getData());
+    return () => {
+      dispatch(removeAllBooks());
+    };
   }, []);
 
   const books = useSelector((state) => state.booksReducer);
@@ -26,7 +30,7 @@ const Books = () => {
     },
   ];
   return (
-    <>
+    <div className="books-container">
       {books.map((book) => (
         <Book
           key={book.item_id}
@@ -36,7 +40,7 @@ const Books = () => {
         />
       ))}
       <AddBook categories={categories} />
-    </>
+    </div>
   );
 };
 

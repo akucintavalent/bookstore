@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const REMOVE_ALL_BOOKS = 'bookStore/books/REMOVE_ALL_BOOKS';
 
 const initialState = [];
 
@@ -14,6 +15,8 @@ export const removeBook = (payload) => ({
   type: REMOVE_BOOK,
   item_id: payload.id,
 });
+
+export const removeAllBooks = () => ({ type: REMOVE_ALL_BOOKS });
 
 export const getData = () => (dispatch) => {
   axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zzyTDYA0R80OtSGSmP3v/books/')
@@ -36,7 +39,9 @@ export const removeData = (id) => (dispatch) => {
 
 export const addData = (book) => (dispatch) => {
   axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/zzyTDYA0R80OtSGSmP3v/books/', book)
-    .then(() => dispatch(addBook(book)))
+    .then(() => {
+      dispatch(addBook(book));
+    })
     .catch(() => {});
 };
 
@@ -46,6 +51,8 @@ const reducer = (state = initialState, action) => {
       return [...state, action.payload];
     case REMOVE_BOOK:
       return state.filter((book) => book.item_id !== action.item_id);
+    case REMOVE_ALL_BOOKS:
+      return [];
     default:
       return state;
   }

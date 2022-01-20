@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Montserrat&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  width: 100%;
+  height: 5%;
+  margin: 0;
+  padding: 2vh 6vw 2vh 6vw;
+  background-color: #fff;
+  border-bottom: solid 1px rgb(206, 206, 206);
+}
+
+.title {
+  height: 2.313rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #0290ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 5%;
+}
+
+.active-nav-link {
+  text-decoration: none;
+  height: 1rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #000;
+}
+
+.non-active-nav-link {
+  text-decoration: none;
+  height: 1rem;
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #000;
+}
