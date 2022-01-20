@@ -1,0 +1,62 @@
+.add-book-container {
+  border-top: 1px solid rgb(204, 204, 204);
+  padding: 1.8rem 0 1.8rem 0;
+}
+
+.add-book-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.book-title-input {
+  width: 50%;
+  height: 2.813rem;
+  margin: 0;
+  padding: 0.813rem 0 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+.book-title-input::placeholder {
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+}
+
+.book-category-input {
+  width: 20%;
+  height: 2.813rem;
+  padding: 0.375rem 0 0.563rem 1rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+}
+
+.add-book-button {
+  width: 20%;
+  height: 2.813rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  border: 0;
+}
+
+.add-book-form-container {
+  display: flex;
+  justify-content: space-between;
+}
