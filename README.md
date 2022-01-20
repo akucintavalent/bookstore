@@ -12,7 +12,7 @@ In this web app you can:
 ## Built With
 
 - Major languages: JavaScript
-- Framework/Libraries: React
+- Framework/Libraries: React, Redux
 - Technologies/tools used:
   - create-react-app tool
   - Webpack
