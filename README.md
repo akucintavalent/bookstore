@@ -7,11 +7,7 @@ In this web app you can:
 - Add a book.
 - Remove a selected book.
 
-- Current look:
-![screnshot](./screenshot.png)
-
-- Big picture:
-![bookstore](./bookstore.png)
+![screnshot](./bookstore_screenshot.png)
 
 ## Built With
 
